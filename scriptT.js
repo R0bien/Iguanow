@@ -85,89 +85,75 @@ input.addEventListener("keydown", function(event) {
             loca += "CAM/GERAD~";
         }
 
-
-    			// Si un seul filtre est coché
-                var res1 = ""
-                if (checkedCount >= 1){
-                res1 += "&Restriction1="
-                        // Si une case Site est cochée
-                        if (checkedSiteCount >= 1) {
-                            res1 += loca;
-                        } else if (checkedNatureCount >= 1) {
-                            res1 += "PublicationType_";
-                        } else if (checkedLangueCount >= 1) {
-                            res1 += "Language_";
-                        }
-                        console.log(searchUrl + res1);
-                    }
-
-        //Supprimer ~ superflue
-        if (searchUrl.endsWith("~")) {
-            searchUrl = searchUrl.slice(0, -1);
-        }
-		
-		// Si deux filtres sont cochés
-        if (checkedCount >= 2){
-            searchUrl += "&Restriction2="
-        }
-
-                // Si une case Nature est cochée
-                if (checkedNatureCount >= 1) {
-                    searchUrl += "PublicationType_";
-                }
-
 		//nature d'ouvrage
+        var natu = "PublicationType_"
 		if (document.getElementById("nature-livre").checked) {
-			searchUrl += "LIV~LIVCP~";
+			natu += "LIV~LIVCP~";
 		}
 		if (document.getElementById("nature-cd").checked) {
-			searchUrl += "CDMUS~CDMUSCP~";
+			natu += "CDMUS~CDMUSCP~";
 		}
 		if (document.getElementById("nature-vinyl").checked) {
-		searchUrl += "VIN~VINCP~";
+		    natu += "VIN~VINCP~";
 		}
 		if (document.getElementById("nature-dvd").checked) {
-			searchUrl += "FILM~FILMCP~FILM12~FILM12CP~FILM16~FILM16CP~FILM18~FILM18CP~";
+			natu += "FILM~FILMCP~FILM12~FILM12CP~FILM16~FILM16CP~FILM18~FILM18CP~";
 		}
 		if (document.getElementById("nature-ebook").checked) {
-			searchUrl += "EBOOK~";
+			natu += "EBOOK~";
 		}
 		if (document.getElementById("nature-perio").checked) {
-			searchUrl += "PERIO~PERIOCP~PERIOISO~PERIOISOCP~";
+			natu += "PERIO~PERIOCP~PERIOISO~PERIOISOCP~";
 		}
 		if (document.getElementById("nature-part").checked) {
-			searchUrl += "PARTIMP~PARTIMPCP~PARTMANCP~";
+			natu += "PARTIMP~PARTIMPCP~PARTMANCP~";
 		}
 		if (document.getElementById("nature-audio").checked) {
-			searchUrl += "TXTLUS~TXTLUSCP~";
+			natu += "TXTLUS~TXTLUSCP~";
 		}
 		if (document.getElementById("nature-plan").checked) {
-			searchUrl += "CA~CACP~";
+			natu += "CA~CACP~";
 		}
 		if (document.getElementById("nature-liseuse").checked) {
-			searchUrl += "LIS~";
+			natu += "LIS~";
 		}
-		
-		        //Supprimer ~ superflue
-        if (searchUrl.endsWith("~")) {
-            searchUrl = searchUrl.slice(0, -1);
-        }
-		
-				// Si trois filtres sont cochés
-        if (checkedCount >= 3){
-            searchUrl += "&Restriction3="
-        }
 
-                // Si une case Nature est cochée
-                if (checkedLangueCount >= 1) {
-                    searchUrl += "Language_";
-                }
-    
-    //Retirer ~ finale
-    if (searchUrl.endsWith("~")) {
-        searchUrl = searchUrl.slice(0, -1);
-    }
+        //nature d'ouvrage
+        var lang = "Language_"
+        if (document.getElementById("langue-francais").checked) {
+            lang += "fre~";
+        }
+		
+ //Supprimer ~ superflue
+ if (loca.endsWith("~")) {
+    loca = loca.slice(0, -1);
+}
+if (natu.endsWith("~")) {
+    natu = natu.slice(0, -1);
+}
+if (lang.endsWith("~")) {
+    lang = lang.slice(0, -1);
+}
+
+var res = "";
+var usedLoca = false;
+var usedNatu = false;
+var usedLang = false;
+
+for (var i = 1; i <= checkedCount; i++) {
+  res += "&Restriction" + i + "=";
+  if (checkedSiteCount >= 1 && !usedLoca) {
+    res += loca;
+    usedLoca = true;
+  } else if (checkedNatureCount >= 1 && !usedNatu) {
+    res += natu;
+    usedNatu = true;
+  } else if (checkedLangueCount >= 1 && !usedLang) {
+    res += lang;
+    usedLang = true;
+  }
+}
 
     //faire apparaitre l'url
-    document.getElementById("search-url").innerHTML = '<a id="lien" href="' + searchUrl +'" target="_blank">' + searchUrl + '</a>';
+    document.getElementById("search-url").innerHTML = '<a id="lien" href="' + searchUrl + res + '" target="_blank">' + searchUrl + res + '</a>';
 }
