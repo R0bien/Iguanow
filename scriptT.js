@@ -112,6 +112,9 @@ input.addEventListener("keydown", function(event) {
             lang += "fre~";
         } if (document.getElementById("langue-anglais").checked) {
             lang += "eng~";
+        } if (document.getElementById("langue-allemand").checked) {
+            lang += "ger~";
+        }
 		
  //Supprimer ~ superflue
  if (loca.endsWith("~")) {
