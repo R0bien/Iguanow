@@ -77,44 +77,32 @@ input.addEventListener("keydown", function(event) {
         var loca = "Location_"
         if (document.getElementById("site-blanzat").checked) {
             loca += "CAM/BLAAC~";
-        }
-        if (document.getElementById("site-neyrat").checked) {
+        } if (document.getElementById("site-neyrat").checked) {
             loca += "CAM/CFJR~";
-        }
-        if (document.getElementById("site-gerzat").checked) {
+        } if (document.getElementById("site-gerzat").checked) {
             loca += "CAM/GERAD~";
         }
-
 		//nature d'ouvrage
         var natu = "PublicationType_"
 		if (document.getElementById("nature-livre").checked) {
 			natu += "LIV~LIVCP~";
-		}
-		if (document.getElementById("nature-cd").checked) {
+		} if (document.getElementById("nature-cd").checked) {
 			natu += "CDMUS~CDMUSCP~";
-		}
-		if (document.getElementById("nature-vinyl").checked) {
+		} if (document.getElementById("nature-vinyl").checked) {
 		    natu += "VIN~VINCP~";
-		}
-		if (document.getElementById("nature-dvd").checked) {
+		} if (document.getElementById("nature-dvd").checked) {
 			natu += "FILM~FILMCP~FILM12~FILM12CP~FILM16~FILM16CP~FILM18~FILM18CP~";
-		}
-		if (document.getElementById("nature-ebook").checked) {
+		} if (document.getElementById("nature-ebook").checked) {
 			natu += "EBOOK~";
-		}
-		if (document.getElementById("nature-perio").checked) {
+		} if (document.getElementById("nature-perio").checked) {
 			natu += "PERIO~PERIOCP~PERIOISO~PERIOISOCP~";
-		}
-		if (document.getElementById("nature-part").checked) {
+		} if (document.getElementById("nature-part").checked) {
 			natu += "PARTIMP~PARTIMPCP~PARTMANCP~";
-		}
-		if (document.getElementById("nature-audio").checked) {
+		} if (document.getElementById("nature-audio").checked) {
 			natu += "TXTLUS~TXTLUSCP~";
-		}
-		if (document.getElementById("nature-plan").checked) {
+		} if (document.getElementById("nature-plan").checked) {
 			natu += "CA~CACP~";
-		}
-		if (document.getElementById("nature-liseuse").checked) {
+		} if (document.getElementById("nature-liseuse").checked) {
 			natu += "LIS~";
 		}
 
@@ -122,16 +110,15 @@ input.addEventListener("keydown", function(event) {
         var lang = "Language_"
         if (document.getElementById("langue-francais").checked) {
             lang += "fre~";
-        }
+        } if (document.getElementById("langue-anglais").checked) {
+            lang += "eng~";
 		
  //Supprimer ~ superflue
  if (loca.endsWith("~")) {
     loca = loca.slice(0, -1);
-}
-if (natu.endsWith("~")) {
+} if (natu.endsWith("~")) {
     natu = natu.slice(0, -1);
-}
-if (lang.endsWith("~")) {
+} if (lang.endsWith("~")) {
     lang = lang.slice(0, -1);
 }
 
