@@ -105,12 +105,16 @@ input.addEventListener("keydown", function(event) {
             { id: "nature-perio", value: "PERIO~PERIOCP~PERIOISO~PERIOISOCP~" },
             { id: "nature-audio", value: "TXTLUS~TXTLUSCP~" },
             { id: "nature-ebook", value: "EBOOK~" },
-            
+            { id: "nature-affiche", value: "AFFCP~"},
+            { id: "nature-archive", value: "ARCCP~"},
+            { id: "nature-boite", value: "BH~BHCP~"},
+            { id: "nature-jeu", value: "BJ~BJCP~"},
             { id: "nature-liseuse", value: "LIS~" },
+            { id: "nature-plan", value: "CA~CACP~" },
             
             { id: "nature-part", value: "PARTIMP~PARTIMPCP~PARTMANCP~" },
             
-            { id: "nature-plan", value: "CA~CACP~" },
+            
             { id: "nature-vinyl", value: "VIN~VINCP~" },
         ];
         
