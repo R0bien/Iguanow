@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styleModerne.css">
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
+    <title>IGUANOW</title>
+</head>
+
+<body>
+    <section id="main">
+    <header>
+        <!-- <button id="theme" onclick="newTheme()">Changer d'apparence</button> -->
+        <h1>IGUANOW</h1>
+        <nav>
+            <p>Utilisez cet outil pour récupérer le lien d'une recherche Iguana à partager ou intégrer dans vos documents !</p>
+        </nav>
+    </header>
+
+        <div id="generateur">
+            <div id="recherche">
+        <label for="search-box">Recherche Iguana (titre, auteur...) :</label>
+        <input type="text" id="search-box" oninput="updateSearchUrl()">
+            <div id="bouton">
+            <button onclick="recherche()">Recherche</button>
+            <button onclick="copySearchUrl()">Copier URL</button>
+            </div>
+        <br>
+        </div>
+		<div id="boite">
+        <span type="text" id="search-url"></span>
+        </div>
+		</div>
+
+		<div id="filtres">
+
+            <!-- Index -->
+            <div id="selecteur">
+            <label class="filtreNom" for="index">Index</label>
+            <select name="index" id="index" onchange="updateSearchUrl()">
+                <option value="">Tous les mots</option>
+                <option value="titre">Titre exact</option>
+                <option value="auteur">Auteur</option>
+                <option value="multi">Titre-Auteur-Sujet</option>
+                <option value="cote">Cote</option>
+                <option value="isbn">Code-barres</option>
+            </select>
+            </div>
+
+            <div id="cumul">
+		<!-- Sites -->
+		<div class="scroll">
+            <p class="filtreNom">Localisation</p>
+        <ul class="cat" onclick="updateSearchUrl()">
+            <li><strong>Médiathèques</strong></li>
+            <li><input type="checkbox" class="site" id="site-blanzat">
+                <label for="site-blanzat">Aimé-Césaire (BLANZAT)</label></li>
+            <li><input type="checkbox" class="site" id="site-pdc">
+                <label for="site-pdc">Alain-Rey (PONT-DU-CHÂTEAU)</label></li>
+            <li><input type="checkbox" class="site" id="site-aubiere">
+                <label for="site-aubiere">Alexandre-Vialatte (AUBIÈRE)</label></li>
+            <li><input type="checkbox" class="site" id="site-gerzat">
+                <label for="site-gerzat">Alphonse-Daudet (GERZAT)</label></li>
+            <li><input type="checkbox" class="site" id="site-cham">
+                <label for="site-cham">Amélie-Murat (CHAMALIÈRES)</label></li>
+            <li><input type="checkbox" class="site" id="site-roma">
+                <label for="site-roma">Arsène-Boulay (ROMAGNAT)</label></li>
+            <li><input type="checkbox" class="site" id="site-cournon">
+                <label for="site-cournon">Hugo-Pratt (COURNON-D'AUVERGNE)</label></li>
+            <li><input type="checkbox" class="site" id="site-neyrat">
+                <label for="site-neyrat">Jack-Ralite (CROIX-DE-NEYRAT)</label></li>
+            <li><input type="checkbox" class="site" id="site-lempdes">
+                <label for="site-lempdes">Jacques-Prévert (LEMPDES)</label></li>
+            <li><input type="checkbox" class="site" id="site-jaude">
+                <label for="site-jaude">Jaude (CLERMONT-FERRAND)</label></li>
+            <li><input type="checkbox" class="site" id="site-ceyrat">
+                <label for="site-ceyrat">La-Plume-et-le-Trait (CEYRAT)</label></li>
+            <li><input type="checkbox" class="site" id="site-orcines">
+                <label for="site-orcines">L'Ecume des Jours (ORCINES)</label></li>
+            <li><input type="checkbox" class="site" id="site-sgc">
+                <label for="site-sgc">Nicolas-Chamfort (SAINT-GENÈS-CHAMPANELLE)</label></li>
+            <li><input type="checkbox" class="site" id="site-beaumont">
+                <label for="site-beaumont">René-Guy-Cadou (BEAUMONT)</label></li>
+            <li><input type="checkbox" class="site" id="site-aulnat">
+                <label for="site-aulnat">Rêve-et-Savoir (AULNAT)</label></li>
+            <li class="st"><strong>Annexes</strong></li>
+            <li><input type="checkbox" class="site" id="site-aaf">
+                <label for="site-aaf">Anatole-France (CLERMONT-FERRAND)</label></li>
+            <li><input type="checkbox" class="site" id="site-ajz">
+                <label for="site-ajz">Jean-Zay (CLERMONT-FERRAND)</label></li>
+            <li><input type="checkbox" class="site" id="site-cendre">
+                <label for="site-cendre">Antenne Hugo-Pratt (LE CENDRE)</label></li>
+            <li><input type="checkbox" class="site" id="site-b1">
+                <label for="site-b1">Bibliobus 1</label></li>
+            <li><input type="checkbox" class="site" id="site-b2">
+                <label for="site-b2">Bibliobus 2</label></li>
+            <li class="st"><strong>Médiathèques spécialisées</strong></li>
+            <li><input type="checkbox" class="site" id="site-conser">
+                <label for="site-conser">Conservatoire à Rayonnement Régional Emmanuel-Chabrier</label></li>
+            <li><input type="checkbox" class="site" id="site-art">
+                <label for="site-art">Ecole Supérieure d'Art</label></li>
+            <li><input type="checkbox" class="site" id="site-jetee">
+                <label for="site-jetee">La Jetée</label></li>
+            <li><input type="checkbox" class="site" id="site-marq">
+                <label for="site-marq">MARQ</label></li>
+            <li><input type="checkbox" class="site" id="site-bargoin">
+                <label for="site-bargoin">Musée Bargoin</label></li>
+            <li><input type="checkbox" class="site" id="site-resist">
+                <label for="site-resist">Musée de la Résistance</label></li>
+            <li><input type="checkbox" class="site" id="site-lecoq">
+                <label for="site-lecoq">Muséum Henri-Lecoq</label></li>
+            <li><input type="checkbox" class="site" id="site-patri">
+                <label for="site-patri">Patrimoine</label></li>
+            <li class="st"><strong>Ressources en ligne</strong></li>
+            <li><input type="checkbox" class="site" id="site-music">
+                <label for="site-music">MusicMe</label></li>
+            <li><input type="checkbox" class="site" id="site-pel">
+                <label for="site-pel">Cafeyn</label></li>
+            <li><input type="checkbox" class="site" id="site-skill">
+                <label for="site-skill">SKILLEOS</label></li>
+            <li><input type="checkbox" class="site" id="site-vod">
+                <label for="site-vod">VOD</label></li>
+            <li><input type="checkbox" class="site" id="site-yeux">
+                <label for="site-yeux">Yeux Doc</label></li>
+        </ul>    
+		</div>
+
+
+        <!-- Natures d'ouvrage -->
+		<div class="scroll">
+            <p class="filtreNom">Nature d'ouvrage</p>
+        <ul class="cat" onclick="updateSearchUrl()">
+            <li><input type="checkbox" class="nature" id="nature-livre">
+                <label for="nature-livre">Livres</label></li>
+            <li><input type="checkbox" class="nature" id="nature-cd">
+                <label for="nature-cd">CD</label></li>
+			<li><input type="checkbox" class="nature" id="nature-dvd">
+                <label for="nature-dvd">Films</label></li>
+            <li><input type="checkbox" class="nature" id="nature-perio">
+                <label for="nature-perio">Journaux/Revues</label></li>
+            <li><input type="checkbox" class="nature" id="nature-audio">
+                <label for="nature-audio">Textes lus</label></li>
+            <li><input type="checkbox" class="nature" id="nature-ebook">
+                <label for="nature-ebook">Ebooks</label></li>
+            <li><input type="checkbox" class="nature" id="nature-affiche">
+                <label for="nature-affiche">Affiches en CP</label></li>
+            <li><input type="checkbox" class="nature" id="nature-archive">
+                <label for="nature-archive">Archives en CP</label></li>
+            <li><input type="checkbox" class="nature" id="nature-boite">
+                <label for="nature-boite">Boîtes à histoires</label></li>
+            <li><input type="checkbox" class="nature" id="nature-jeu">
+                <label for="nature-jeu">Boîtes de jeux</label></li>
+            <li><input type="checkbox" class="nature" id="nature-plan">
+                <label for="nature-plan">Cartes et plans</label></li>
+            <li><input type="checkbox" class="nature" id="nature-carte">
+                <label for="nature-carte">Cartes postales</label></li>
+            <li><input type="checkbox" class="nature" id="nature-cdrom">
+                <label for="nature-cdrom">CD-ROM</label></li>
+            <li><input type="checkbox" class="nature" id="nature-enreg">
+                <label for="nature-enreg">Enregistrements sonores en CP</label></li>
+            <li><input type="checkbox" class="nature" id="nature-estampe">
+                <label for="nature-estampe">Estampes en CP</label></li>
+            <li><input type="checkbox" class="nature" id="nature-jeuv">
+                <label for="nature-jeuv">Jeux vidéos</label></li>
+            <li><input type="checkbox" class="nature" id="nature-kami">
+                <label for="nature-kami">Kamishibaï</label></li>
+            <li><input type="checkbox" class="nature" id="nature-liseuse">
+                <label for="nature-liseuse">Liseuses</label></li>
+            <li><input type="checkbox" class="nature" id="nature-manu">
+                <label for="nature-manu">Manuscrits en CP</label></li>
+            <li><input type="checkbox" class="nature" id="nature-method">
+                <label for="nature-method">Méthodes musicales</label></li>
+            <li><input type="checkbox" class="nature" id="nature-microf">
+                <label for="nature-microf">Microfilms en CP</label></li>
+            <li><input type="checkbox" class="nature" id="nature-objet">
+                <label for="nature-objet">Objets</label></li>
+            <li><input type="checkbox" class="nature" id="nature-part">
+                <label for="nature-part">Partitions</label></li>
+            <li><input type="checkbox" class="nature" id="nature-photo">
+                <label for="nature-photo">Photos en CP</label></li>
+            <li><input type="checkbox" class="nature" id="nature-recueil">
+                <label for="nature-recueil">Recueil factice en CP</label></li>
+            <li><input type="checkbox" class="nature" id="nature-elec">
+                <label for="nature-elec">Ressources électroniques</label></li>
+            <li><input type="checkbox" class="nature" id="nature-tablette">
+                <label for="nature-tablette">Tablettes</label></li>
+            <li><input type="checkbox" class="nature" id="nature-vinyl">
+                <label for="nature-vinyl">Vinyles</label></li>
+        </ul>
+		</div>
+
+				<!-- Langues -->
+		<div class="scroll">
+            <p class="filtreNom">Langue</p>
+        <ul class="cat" onclick="updateSearchUrl()">
+            <li><input type="checkbox" class="langue" id="langue-allemand">
+                <label for="langue-allemand">Allemand</label></li>
+            <li><input type="checkbox" class="langue" id="langue-anglais">
+                <label for="langue-anglais">Anglais</label></li>
+            <li><input type="checkbox" class="langue" id="langue-anglo">
+                <label for="langue-anglo">Anglo-saxon</label></li>
+            <li><input type="checkbox" class="langue" id="langue-arabe">
+                <label for="langue-arabe">Arabe</label></li>
+            <li><input type="checkbox" class="langue" id="langue-breton">
+                <label for="langue-breton">Breton</label></li>
+            <li><input type="checkbox" class="langue" id="langue-chinois">
+                <label for="langue-chinois">Chinois</label></li>
+            <li><input type="checkbox" class="langue" id="langue-coreen">
+                <label for="langue-coreen">Coréen</label></li>
+            <li><input type="checkbox" class="langue" id="langue-creole">
+                <label for="langue-creole">Créoles/pidgins français, autres</label></li>
+            <li><input type="checkbox" class="langue" id="langue-danois">
+                <label for="langue-danois">Danois</label></li>
+            <li><input type="checkbox" class="langue" id="langue-espagnol">
+                <label for="langue-espagnol">Espagnol</label></li>
+            <li><input type="checkbox" class="langue" id="langue-esperanto">
+                <label for="langue-esperanto">Esperanto</label></li>
+            <li><input type="checkbox" class="langue" id="langue-finnois">
+                <label for="langue-finnois">Finnois</label></li>
+            <li><input type="checkbox" class="langue" id="langue-francais">
+                <label for="langue-francais">Français</label></li>
+            <li><input type="checkbox" class="langue" id="langue-fancien">
+                <label for="langue-fancien">Français ancien</label></li>
+            <li><input type="checkbox" class="langue" id="langue-fmoyen">
+                <label for="langue-fmoyen">Français moyen</label></li>
+            <li><input type="checkbox" class="langue" id="langue-gancien">
+                <label for="langue-gancien">Grec ancien</label></li>
+            <li><input type="checkbox" class="langue" id="langue-grec">
+                <label for="langue-grec">Grec moderne</label></li>
+            <li><input type="checkbox" class="langue" id="langue-hebreu">
+                <label for="langue-hebreu">Hébreu</label></li>
+            <li><input type="checkbox" class="langue" id="langue-hindi">
+                <label for="langue-hindi">Hindi</label></li>
+            <li><input type="checkbox" class="langue" id="langue-hongrois">
+                <label for="langue-hongrois">Hongrois</label></li>
+            <li><input type="checkbox" class="langue" id="langue-italien">
+                <label for="langue-italien">Italien</label></li>
+            <li><input type="checkbox" class="langue" id="langue-japonais">
+                <label for="langue-japonais">Japonais</label></li>
+            <li><input type="checkbox" class="langue" id="langue-latin">
+                <label for="langue-latin">Latin</label></li>
+            <li><input type="checkbox" class="langue" id="langue-neerlandais">
+                <label for="langue-neerlandais">Néerlandais</label></li>
+            <li><input type="checkbox" class="langue" id="langue-nilo">
+                <label for="langue-nilo">Nilo-sahariennes, autres langues</label></li>
+            <li><input type="checkbox" class="langue" id="langue-norvegien">
+                <label for="langue-norvegien">Norvégien</label></li>
+            <li><input type="checkbox" class="langue" id="langue-occitan">
+                <label for="langue-occitan">Occitan</label></li>
+            <li><input type="checkbox" class="langue" id="langue-persan">
+                <label for="langue-persan">Persan</label></li>
+            <li><input type="checkbox" class="langue" id="langue-polonais">
+                <label for="langue-polonais">Polonais</label></li>
+            <li><input type="checkbox" class="langue" id="langue-portugais">
+                <label for="langue-portugais">Potugais</label></li>
+            <li><input type="checkbox" class="langue" id="langue-roumain">
+                <label for="langue-roumain">Roumain</label></li>
+            <li><input type="checkbox" class="langue" id="langue-russe">
+                <label for="langue-russe">Russe</label></li>
+            <li><input type="checkbox" class="langue" id="langue-suedois">
+                <label for="langue-suedois">Suédois</label></li>
+            <li><input type="checkbox" class="langue" id="langue-tcheque">
+                <label for="langue-tcheque">Tchèque</label></li>
+            <li><input type="checkbox" class="langue" id="langue-turc">
+                <label for="langue-turc">Turc</label></li>
+            <li><input type="checkbox" class="langue" id="langue-wallon">
+                <label for="langue-wallon">Wallon</label></li>
+            <li><input type="checkbox" class="langue" id="langue-multi">
+                <label for="langue-multi">Multilingue</label></li>
+        </ul>
+		</div>
+
+            <!-- Dates -->
+        <div class="scroll">
+            <p class="filtreNom">Date de publication</p>
+            <div class="cat" id="date">
+            <p>À partir de<br><input type="text" id="date1" oninput="updateSearchUrl()">
+            <br>jusqu'à<br><input type="text" id="date2" oninput="updateSearchUrl()">
+            <br><i>(laisser la deuxième case vide pour rechercher une année précise)</i></p>
+            </div>
+
+        </div>
+        </div>
+		</div>
+</section>
+<a href="about.html">
+    <button id="about"><strong>À propos</strong></button>
+</a>
+
+    <script src="scriptT.js"></script>
+
+</body>
+
+</html>
