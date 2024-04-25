@@ -4,16 +4,17 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="styleModerne.css">
-    <title>TEST Recherche Iguana</title>
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
+    <title>TEST IGUANOW</title>
 </head>
 
 <body>
     <section id="main">
     <header>
         <button id="theme" onclick="newTheme()">Changer d'apparence</button>
-        <h1>TEST Recherche hyperlien Iguana</h1>
+        <h1>IGUANOW - VERSION DE TEST</h1>
         <nav>
-            <p>Utilisez cet outil pour récupérer le lien d'une recherche Iguana pour l'intégrer dans des documents, afin de rediriger vers la bibliographie d'un auteur par exemple !</p>
+            <p>Utilisez cet outil pour récupérer le lien d'une recherche Iguana à partager ou intégrer dans vos documents !</p>
         </nav>
     </header>
 
@@ -114,6 +115,8 @@
             <li class="st"><strong>Ressources en ligne</strong></li>
             <li><input type="checkbox" class="site" id="site-music">
                 <label for="site-music">MusicMe</label></li>
+            <li><input type="checkbox" class="site" id="site-pel">
+                <label for="site-pel">Cafeyn</label></li>
             <li><input type="checkbox" class="site" id="site-skill">
                 <label for="site-skill">SKILLEOS</label></li>
             <li><input type="checkbox" class="site" id="site-vod">
@@ -191,28 +194,99 @@
 		<div class="scroll">
             <p class="filtreNom">Langue</p>
         <ul class="cat" onclick="updateSearchUrl()">
-            <li><input type="checkbox" class="langue" id="langue-francais" value="francais">
-            <label for="langue-francais">Français</label></li>
-            <li><input type="checkbox" class="langue" id="langue-anglais" value="anglais">
-            <label for="langue-anglais">Anglais</label></li>
-            <li><input type="checkbox" class="langue" id="langue-allemand" value="allemand">
-            <label for="langue-allemand">Allemand</label></li>
+            <li><input type="checkbox" class="langue" id="langue-allemand">
+                <label for="langue-allemand">Allemand</label></li>
+            <li><input type="checkbox" class="langue" id="langue-anglais">
+                <label for="langue-anglais">Anglais</label></li>
+            <li><input type="checkbox" class="langue" id="langue-anglo">
+                <label for="langue-anglo">Anglo-saxon</label></li>
+            <li><input type="checkbox" class="langue" id="langue-arabe">
+                <label for="langue-arabe">Arabe</label></li>
+            <li><input type="checkbox" class="langue" id="langue-breton">
+                <label for="langue-breton">Breton</label></li>
+            <li><input type="checkbox" class="langue" id="langue-chinois">
+                <label for="langue-chinois">Chinois</label></li>
+            <li><input type="checkbox" class="langue" id="langue-coreen">
+                <label for="langue-coreen">Coréen</label></li>
+            <li><input type="checkbox" class="langue" id="langue-creole">
+                <label for="langue-creole">Créoles/pidgins français, autres</label></li>
+            <li><input type="checkbox" class="langue" id="langue-danois">
+                <label for="langue-danois">Danois</label></li>
+            <li><input type="checkbox" class="langue" id="langue-espagnol">
+                <label for="langue-espagnol">Espagnol</label></li>
+            <li><input type="checkbox" class="langue" id="langue-esperanto">
+                <label for="langue-esperanto">Esperanto</label></li>
+            <li><input type="checkbox" class="langue" id="langue-finnois">
+                <label for="langue-finnois">Finnois</label></li>
+            <li><input type="checkbox" class="langue" id="langue-francais">
+                <label for="langue-francais">Français</label></li>
+            <li><input type="checkbox" class="langue" id="langue-fancien">
+                <label for="langue-fancien">Français ancien</label></li>
+            <li><input type="checkbox" class="langue" id="langue-fmoyen">
+                <label for="langue-fmoyen">Français moyen</label></li>
+            <li><input type="checkbox" class="langue" id="langue-gancien">
+                <label for="langue-gancien">Grec ancien</label></li>
+            <li><input type="checkbox" class="langue" id="langue-grec">
+                <label for="langue-grec">Grec moderne</label></li>
+            <li><input type="checkbox" class="langue" id="langue-hebreu">
+                <label for="langue-hebreu">Hébreu</label></li>
+            <li><input type="checkbox" class="langue" id="langue-hindi">
+                <label for="langue-hindi">Hindi</label></li>
+            <li><input type="checkbox" class="langue" id="langue-hongrois">
+                <label for="langue-hongrois">Hongrois</label></li>
+            <li><input type="checkbox" class="langue" id="langue-italien">
+                <label for="langue-italien">Italien</label></li>
+            <li><input type="checkbox" class="langue" id="langue-japonais">
+                <label for="langue-japonais">Japonais</label></li>
+            <li><input type="checkbox" class="langue" id="langue-latin">
+                <label for="langue-latin">Latin</label></li>
+            <li><input type="checkbox" class="langue" id="langue-neerlandais">
+                <label for="langue-neerlandais">Néerlandais</label></li>
+            <li><input type="checkbox" class="langue" id="langue-nilo">
+                <label for="langue-nilo">Nilo-sahariennes, autres langues</label></li>
+            <li><input type="checkbox" class="langue" id="langue-norvegien">
+                <label for="langue-norvegien">Norvégien</label></li>
+            <li><input type="checkbox" class="langue" id="langue-occitan">
+                <label for="langue-occitan">Occitan</label></li>
+            <li><input type="checkbox" class="langue" id="langue-persan">
+                <label for="langue-persan">Persan</label></li>
+            <li><input type="checkbox" class="langue" id="langue-polonais">
+                <label for="langue-polonais">Polonais</label></li>
+            <li><input type="checkbox" class="langue" id="langue-portugais">
+                <label for="langue-portugais">Potugais</label></li>
+            <li><input type="checkbox" class="langue" id="langue-roumain">
+                <label for="langue-roumain">Roumain</label></li>
+            <li><input type="checkbox" class="langue" id="langue-russe">
+                <label for="langue-russe">Russe</label></li>
+            <li><input type="checkbox" class="langue" id="langue-suedois">
+                <label for="langue-suedois">Suédois</label></li>
+            <li><input type="checkbox" class="langue" id="langue-tcheque">
+                <label for="langue-tcheque">Tchèque</label></li>
+            <li><input type="checkbox" class="langue" id="langue-turc">
+                <label for="langue-turc">Turc</label></li>
+            <li><input type="checkbox" class="langue" id="langue-wallon">
+                <label for="langue-wallon">Wallon</label></li>
+            <li><input type="checkbox" class="langue" id="langue-multi">
+                <label for="langue-multi">Multilingue</label></li>
         </ul>
 		</div>
 
             <!-- Dates -->
         <div class="scroll">
             <p class="filtreNom">Date de publication</p>
-            <div class="cat">
-            <p>À partir de <input type="text" id="date1" oninput="updateSearchUrl()">
-            <br>jusqu'à <input type="text" id="date2" oninput="updateSearchUrl()"></p>
+            <div class="cat" id="date">
+            <p>À partir de<br><input type="text" id="date1" oninput="updateSearchUrl()">
+            <br>jusqu'à<br><input type="text" id="date2" oninput="updateSearchUrl()">
+            <br><i>(laisser la deuxième case vide pour rechercher une année précise)</i></p>
+            </div>
 
         </div>
         </div>
-        </div>
-
 		</div>
 </section>
+<a href="about.html">
+    <button id="about"><strong>À propos</strong></button>
+</a>
 
     <script src="scriptT.js"></script>
 

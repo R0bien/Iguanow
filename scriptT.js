@@ -89,14 +89,50 @@ input.addEventListener("keydown", function(event) {
             }
 
         //site
-        var loca = "Location_"
-        if (document.getElementById("site-blanzat").checked) {
-            loca += "CAM/BLAAC~";
-        } if (document.getElementById("site-neyrat").checked) {
-            loca += "CAM/CFJR~";
-        } if (document.getElementById("site-gerzat").checked) {
-            loca += "CAM/GERAD~";
-        }
+        var checkboxesSite = [
+            { id: "site-blanzat", value: "CAM/BLAAC~" },
+            { id: "site-pdc", value: "CAM/PDCAR~" },
+            { id: "site-aubiere", value: "CAM/AUBAV~" },
+            { id: "site-gerzat", value: "CAM/GERAD~" },
+            { id: "site-cham", value: "CAM/CHAAM~" },
+            { id: "site-roma", value: "CAM/ROMAB~" },
+            { id: "site-cournon", value: "CAM/COUHP~" },
+            { id: "site-neyrat", value: "CAM/CFJR~" },
+            { id: "site-lempdes", value: "CAM/LEMJP~" },
+            { id: "site-jaude", value: "CAM/CFJAU~" },
+            { id: "site-ceyrat", value: "CAM/CEYPT~" },
+            { id: "site-orcines", value: "CAM/ORCEJ~" },
+            { id: "site-sgc", value: "CAM/SGCNC~" },
+            { id: "site-beaumont", value: "CAM/BEARGC~" },
+            { id: "site-aulnat", value: "CAM/AULRS~" },
+            { id: "site-aaf", value: "CAM/CFJAUAF~" },
+            { id: "site-ajz", value: "CAM/CFJAUJZ~" },
+            { id: "site-cendre", value: "CAM/LECHP~" },
+            { id: "site-b1", value: "CAM/BUS1~" },
+            { id: "site-b2", value: "CAM/BUS2~" },
+            { id: "site-conser", value: "CAM/CFCEH~" },
+            { id: "site-art", value: "CAM/CFESACM~" },
+            { id: "site-jetee", value: "CAM/CFJET~" },
+            { id: "site-marq", value: "CAM/CFMARQ~" },
+            { id: "site-bargoin", value: "CAM/CFMB~" },
+            { id: "site-resist", value: "CAM/CHAMR~" },
+            { id: "site-lecoq", value: "CAM/CFMHL~" },
+            { id: "site-patri", value: "CAM/CFPAT~" },
+            { id: "site-music", value: "CAM/MUSICME~" },
+            { id: "site-pel", value: "CAM/PEL~" },
+            { id: "site-skill", value: "CAM/SKIL~" },
+            { id: "site-vod", value: "CAM/ARTEVOD~" },
+            { id: "site-yeux", value: "CAM/YEUXDOC~" },
+        ];
+
+        var loca = "Location_";
+
+        checkboxesSite.forEach(function(checkboxSite) {
+            if (document.getElementById(checkboxSite.id).checked) {
+                loca += checkboxSite.value;
+            }
+        });
+
 		//nature d'ouvrage
         var checkboxesNature = [
             { id: "nature-livre", value: "LIV~LIVCP~" },
@@ -109,12 +145,23 @@ input.addEventListener("keydown", function(event) {
             { id: "nature-archive", value: "ARCCP~"},
             { id: "nature-boite", value: "BH~BHCP~"},
             { id: "nature-jeu", value: "BJ~BJCP~"},
+            { id: "nature-plan", value: "CA~CACP~"},
+            { id: "nature-carte", value: "CAPO~CAPOCP~" },
+            { id: "nature-cdrom", value: "CDR~CDRCP~" },
+            { id: "nature-enreg", value: "SONCP~" },
+            { id: "nature-estampe", value: "GRACP~" },
+            { id: "nature-jeuv", value: "JV~JVCP~" },
+            { id: "nature-kami", value: "KAM~KAMCP~" },
             { id: "nature-liseuse", value: "LIS~" },
-            { id: "nature-plan", value: "CA~CACP~" },
-            
+            { id: "nature-manu", value: "MANCP~" },
+            { id: "nature-method", value: "METHO~METHOCP~" },
+            { id: "nature-microf", value: "MICP~" },
+            { id: "nature-objet", value: "OBJ~OBJCP~" },
             { id: "nature-part", value: "PARTIMP~PARTIMPCP~PARTMANCP~" },
-            
-            
+            { id: "nature-photo", value: "PHOTOCP~" },
+            { id: "nature-recueil", value: "RECCP~" },
+            { id: "nature-elec", value: "RESSEL~RESSELCP~" },
+            { id: "nature-tablette", value: "TAB~TABCP~" },
             { id: "nature-vinyl", value: "VIN~VINCP~" },
         ];
         
@@ -127,14 +174,53 @@ input.addEventListener("keydown", function(event) {
         });
 
         //langue
-        var lang = "Language_"
-        if (document.getElementById("langue-francais").checked) {
-            lang += "fre~";
-        } if (document.getElementById("langue-anglais").checked) {
-            lang += "eng~";
-        } if (document.getElementById("langue-allemand").checked) {
-            lang += "ger~";
-        }
+        var checkboxesLangue = [
+            { id: "langue-allemand", value: "ger~" },
+            { id: "langue-anglais", value: "eng~" },
+            { id: "langue-anglo", value: "ang~" },
+            { id: "langue-arabe", value: "ara~" },
+            { id: "langue-breton", value: "bre~" },
+            { id: "langue-chinois", value: "chi~" },
+            { id: "langue-coreen", value: "kor~" },
+            { id: "langue-creole", value: "cpe~" },
+            { id: "langue-danois", value: "dan~" },
+            { id: "langue-espagnol", value: "spa~" },
+            { id: "langue-esperanto", value: "esp~" },
+            { id: "langue-finnois", value: "fin~" },
+            { id: "langue-francais", value: "fre~" },
+            { id: "langue-fancien", value: "fro~" },
+            { id: "langue-fmoyen", value: "frm~" },
+            { id: "langue-gancien", value: "grc~" },
+            { id: "langue-grec", value: "gre~" },
+            { id: "langue-hebreu", value: "heb~" },
+            { id: "langue-hindi", value: "hin~" },
+            { id: "langue-hongrois", value: "hun~" },
+            { id: "langue-italien", value: "ita~" },
+            { id: "langue-japonais", value: "jpn~" },
+            { id: "langue-latin", value: "lat~" },
+            { id: "langue-neerlandais", value: "dut~" },
+            { id: "langue-nilo", value: "ssa~" },
+            { id: "langue-norvegien", value: "nor~" },
+            { id: "langue-occitan", value: "oci~" },
+            { id: "langue-persan", value: "per~" },
+            { id: "langue-polonais", value: "pol~" },
+            { id: "langue-portugais", value: "por~" },
+            { id: "langue-roumain", value: "rum~" },
+            { id: "langue-russe", value: "rus~" },
+            { id: "langue-suedois", value: "swe~" },
+            { id: "langue-tcheque", value: "cze~" },
+            { id: "langue-turc", value: "tur~" },
+            { id: "langue-wallon", value: "wln~" },
+            { id: "langue-multi", value: "mul~" },
+        ];
+
+        var lang = "Language_";
+        
+        checkboxesLangue.forEach(function(checkboxLangue) {
+            if (document.getElementById(checkboxLangue.id).checked) {
+                lang += checkboxLangue.value;
+            }
+        });
 
  //Supprimer ~ superflue
  if (loca.endsWith("~")) {
