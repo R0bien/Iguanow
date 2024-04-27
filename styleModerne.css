@@ -248,6 +248,7 @@
         margin-bottom: 2vh;
         margin-right: 1vw;
         width: 6vw;
+        height: auto;
         border-color: #0000007c;
         background: #FFF;
         box-shadow: 0px 0px 26px -1px rgba(0, 0, 0, 0.226);
