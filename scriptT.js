@@ -2,7 +2,7 @@
 function copySearchUrl() {
     var searchUrl = document.getElementById("search-url").firstChild.href;
     navigator.clipboard.writeText(searchUrl)
-        .then(alert("Hyperlien permanent Iguana copié dans le presse-papier!"))
+        .then(alert("Hyperlien permanent Iguana copié dans le presse-papier !"))
         .catch(error => console.error("Erreur de copie: " + error));
 }
 
