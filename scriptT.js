@@ -257,8 +257,10 @@ for (var i = 1; i <= checkedCount; i++) {
     //faire apparaitre l'url
 	if (document.getElementById("search-box").value.trim() == "") {
     document.getElementById("search-url").innerHTML = '<a id="lien" href="' + searchUrl + "*" + res + '" target="_blank">' + searchUrl + "*" + res + '</a>';
+	document.getElementById("bouton").innerHTML = '<button id="brec" onclick="recherche()"> Rechercher tout </button> <button onclick="copySearchUrl()">Copier URL</button>';
 	} else {
 	document.getElementById("search-url").innerHTML = '<a id="lien" href="' + searchUrl + res + '" target="_blank">' + searchUrl + res + '</a>';
+	document.getElementById("bouton").innerHTML = '<button id="brec" onclick="recherche()"> Rechercher </button> <button onclick="copySearchUrl()">Copier URL</button>';
 	}
 }
 

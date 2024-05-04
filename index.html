@@ -8,7 +8,7 @@
     <title>TEST IGUANOW</title>
 </head>
 
-<body>
+<body onload=updateSearchUrl()>
     <section id="main">
     <header>
         <button id="theme" onclick="newTheme()">Changer d'apparence</button>
@@ -20,16 +20,16 @@
 
         <div id="generateur">
             <div id="recherche">
-        <label for="search-box">Recherche Iguana (titre, auteur...) :</label>
-        <input type="text" id="search-box" oninput="updateSearchUrl()">
+        <label id="indice" for="search-box">Recherche Iguana (titre, auteur...) :</label>
+        <input type="text" id="search-box" placeholder="Laisser vide pour rechercher sans mot-clef" oninput="updateSearchUrl()">
             <div id="bouton">
-            <button onclick="recherche()">Recherche</button>
+            <button onclick="recherche()">Rechercher tout</button>
             <button onclick="copySearchUrl()">Copier URL</button>
             </div>
         <br>
         </div>
 		<div id="boite">
-        <span type="text" id="search-url"></span>
+        <span type="text" id="search-url"> </span>
         </div>
 		</div>
 

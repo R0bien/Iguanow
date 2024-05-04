@@ -46,6 +46,10 @@
     nav{
         font-size: x-large;
     }
+	
+	#indice{
+		font-size: large;
+	}
 
     #theme{
         width: 130px;
