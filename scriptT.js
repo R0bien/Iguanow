@@ -6,14 +6,14 @@ function copySearchUrl() {
         .catch(error => console.error("Erreur de copie: " + error));
 }
 
-function recherche() {
-    document.getElementById("lien").click();
-}
+	function recherche() {
+		document.getElementById("lien").click();
+	}
 
 // déclaration des variables
 function updateSearchUrl() {
     var searchTerm = document.getElementById("search-box").value;
-    var searchUrl = "https://www.bibliotheques-clermontmetropole.eu/iguana/www.main.cls?sUrl=search#searchTerm=" + encodeURIComponent(searchTerm);
+    var searchUrl = "https://www.bibliotheques-clermontmetropole.eu/iguana/www.main.cls?sUrl=search#searchTerm=" + encodeURIComponent(searchTerm);	
 
 // Accès aux résultats de recherche en pressant Entrée
 var input = document.getElementById("search-box");
@@ -255,7 +255,11 @@ for (var i = 1; i <= checkedCount; i++) {
 }
 
     //faire apparaitre l'url
-    document.getElementById("search-url").innerHTML = '<a id="lien" href="' + searchUrl + res + '" target="_blank">' + searchUrl + res + '</a>';
+	if (document.getElementById("search-box").value.trim() == "") {
+    document.getElementById("search-url").innerHTML = '<a id="lien" href="' + searchUrl + "*" + res + '" target="_blank">' + searchUrl + "*" + res + '</a>';
+	} else {
+	document.getElementById("search-url").innerHTML = '<a id="lien" href="' + searchUrl + res + '" target="_blank">' + searchUrl + res + '</a>';
+	}
 }
 
 function newTheme() {
