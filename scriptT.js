@@ -24,18 +24,20 @@ input.addEventListener("keydown", function(event) {
   }
 }, {once : true});
 
+var res = "";
+
     // Index
     var indexValue = document.getElementById("index").value;
     if (indexValue == "titre") {
-        searchUrl += "&Index1=Texact";
+        res += "&Index1=Texact";
       } else if (indexValue === "auteur") {
-        searchUrl += "&Index1=Iguanaauteurs$";
+        res += "&Index1=Iguanaauteurs$";
       } else if (indexValue === "multi") {
-        searchUrl += "&Index1=Iguanamulticritere";
+        res += "&Index1=Iguanamulticritere";
       } else if (indexValue === "cote") {
-        searchUrl += "&Index1=Iguanacote";
+        res += "&Index1=Iguanacote";
       } else if (indexValue === "isbn") {
-        searchUrl += "&Index1=Uindex07";
+        res += "&Index1=Uindex07";
         };
 
         // Compte des cases Site cochées
@@ -233,7 +235,6 @@ input.addEventListener("keydown", function(event) {
     date = date.slice(0, -1);
 }
 
-var res = "";
 var usedLoca = false;
 var usedNatu = false;
 var usedLang = false;
