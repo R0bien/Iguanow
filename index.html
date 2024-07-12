@@ -35,18 +35,30 @@
 
 		<div id="filtres">
 
-            <!-- Index -->
-            <div id="selecteur">
-            <label class="filtreNom" for="index">Index</label>
-            <select name="index" id="index" onchange="updateSearchUrl()">
-                <option value="">Tous les mots</option>
-                <option value="titre">Titre exact</option>
-                <option value="auteur">Auteur</option>
-                <option value="multi">Titre-Auteur-Sujet</option>
-                <option value="cote">Cote</option>
-                <option value="isbn">Code-barres</option>
-            </select>
-            </div>
+            <div id="choix">
+				<!-- Index -->
+				<div class="selecteur">
+				<label class="filtreNom" for="index">Index</label>
+				<select name="index" id="index" onchange="updateSearchUrl()">
+					<option value="">Tous les mots</option>
+					<option value="titre">Titre exact</option>
+					<option value="auteur">Auteur</option>
+					<option value="multi">Titre-Auteur-Sujet</option>
+					<option value="cote">Cote</option>
+					<option value="isbn">Code-barres</option>
+				</select>
+				</div>
+
+				<!-- Disponibilité -->
+				<div class="selecteur">
+				<label class="filtreNom" for="dispo">Disponibilité</label>
+				<select name="dispo" id="dispo" onchange="updateSearchUrl()">
+					<option value=""></option>
+					<option value="dispo1">Disponible</option>
+					<option value="dispo0">Non disponible</option>
+				</select>
+				</div>
+			</div>
 
             <div id="cumul">
 		<!-- Sites -->
