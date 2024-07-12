@@ -202,8 +202,15 @@
         box-shadow: 0px 0px 26px -1px rgba(196, 167, 143, 0.50);
         overflow: auto;
     }
+	
+	#choix{
+		display:flex;
+		flex-direction:row;
+		gap:3vw;
+	}
+		
 
-    #selecteur{
+    .selecteur{
         display:flex;
         align-items: center;
         background: #FFF;
