@@ -255,6 +255,14 @@ for (var i = 1; i <= checkedCount; i++) {
   }
 }
 
+// Disponibilité
+    var indexValue = document.getElementById("dispo").value;
+    if (indexValue == "dispo1") {
+        res += "&Facet1=Availability^1";
+      } else if (indexValue === "dispo0") {
+        res += "&Facet1=Availability^0";
+      };
+	
     //faire apparaitre l'url
     if (document.getElementById("search-box").value.trim() == "") {
     document.getElementById("search-url").innerHTML = '<a id="lien" href="' + searchUrl + "*" + res + '" target="_blank">' + searchUrl + "*" + res + '</a>';
