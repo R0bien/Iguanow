@@ -203,7 +203,13 @@
         overflow: auto;
     }
 
-    #selecteur{
+	#choix{
+		display:flex;
+		flex-direction:row;
+		gap:3vw;
+	}
+
+    .selecteur{
         display:flex;
         align-items: center;
         background: #FFF;
