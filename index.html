@@ -40,10 +40,16 @@
 				<div class="selecteur">
 				<label class="filtreNom" for="index">Index</label>
 				<select name="index" id="index" onchange="updateSearchUrl()">
-					<option value="">Tous les mots</option>
+					<option>Tous les mots</option>
+					<option value="mots">Mots du titre</option>
 					<option value="titre">Titre exact</option>
+					<option value="serie">Titre de série</option>
 					<option value="auteur">Auteur</option>
+					<option value="sujet">Sujet</option>
 					<option value="multi">Titre-Auteur-Sujet</option>
+					<option value="editeur">Éditeur/Imprimeur</option>
+					<option value="collection">Collection</option>
+					<option value="dewey">Dewey</option>
 					<option value="cote">Cote</option>
 					<option value="isbn">Code-barres</option>
 				</select>
