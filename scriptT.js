@@ -34,7 +34,7 @@ var res = "";
         res += "&Index1=Iguanaauteurs$";
       } else if (indexValue === "sujet") {
         res += "&Index1=Iguanasujets$";
-      }else if (indexValue === "multi") {
+      } else if (indexValue === "multi") {
         res += "&Index1=Iguanamulticritere";
       } else if (indexValue === "cote") {
         res += "&Index1=Iguanacote";
