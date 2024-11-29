@@ -32,8 +32,20 @@ var res = "";
         res += "&Index1=Texact";
       } else if (indexValue === "auteur") {
         res += "&Index1=Iguanaauteurs$";
+      } else if (indexValue === "serie") {
+        res += "&Index1=Serie";
+      } else if (indexValue === "mots") {
+        res += "&Index1=Iguanatitre";
+      } else if (indexValue === "sujet") {
+        res += "&Index1=Iguanasujets$";
       } else if (indexValue === "multi") {
         res += "&Index1=Iguanamulticritere";
+      } else if (indexValue === "editeur") {
+        res += "&Index1=Iguanaediteur";
+		} else if (indexValue === "collection") {
+        res += "&Index1=Iguanacollection";
+		} else if (indexValue === "dewey") {
+        res += "&Index1=Uindex09";
       } else if (indexValue === "cote") {
         res += "&Index1=Iguanacote";
       } else if (indexValue === "isbn") {
