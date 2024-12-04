@@ -99,8 +99,14 @@
     }
 
 	#search-box:hover{
+		box-shadow: 0px 0px 26px -1px rgba(222, 222, 222, 0.26);
+	}
+
+	#search-box:focus{
 		box-shadow: 0px 0px 26px -1px rgba(255, 255, 255, 0.26);
 	}
+
+
 
     button{
         width: 9vw;
