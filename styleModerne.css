@@ -98,11 +98,11 @@
         font-size: large;
     }
 
-	input type="text":hover{
+	#search-box:hover{
 		box-shadow: 0px 0px 26px -1px rgba(222, 222, 222, 0.26);
 	}
 
-	input type="text":focus{
+	#search-box:focus{
 		box-shadow: 0px 0px 26px -1px rgba(255, 255, 255, 0.26);
 	}
 
@@ -245,6 +245,11 @@
     }
 
 	select:hover{
+	box-shadow: 0px 0px 26px -1px rgba(191, 67, 50, 0.47);
+	background: #f0f0f0;
+	}
+
+	select:focus{
 	box-shadow: 0px 0px 26px -1px rgba(191, 67, 50, 0.47);
 	background: #f0f0f0;
 	}
